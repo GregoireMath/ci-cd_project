@@ -25,6 +25,18 @@ We use for that the Nasa's API : https://api.nasa.gov
 ### Launch the app
 ```python3 app.py```  
 
-## Website access
+### Website access
 
 http://127.0.0.1:5000
+
+## Setup with Docker
+After install Docker and dependencies, you must create an image with the docker file:
+
+### Go in the folder 
+sudo docker build . -t apppython
+
+### To launch in backgrounp :
+sudo docker run -d -p 3232:5000 --name TEST1 apppython
+
+### In an browser :
+http://localhost:3232
