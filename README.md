@@ -8,7 +8,7 @@ We use for that the Nasa's API : https://api.nasa.gov
 ## Requirements
 
 * python3&nbsp;&nbsp;```sudo apt install python3```
-* pip3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```python3 -m pip3 install --upgrade pip```
+* pip3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```sudo apt install python3-pip```
 * flask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```pip3 install flask```
 * requests&nbsp;```pip3 install requests```
 * dotenv&nbsp;&nbsp;&nbsp;&nbsp;```pip3 install python-dotenv```
