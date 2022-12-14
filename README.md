@@ -1,17 +1,30 @@
-# ci-cd_project
+# CI/CD Project - Grégoire MATHIAN & Yvann SENENTZ
 
+## What is it ?
 
-Key pour appel d'API NASA :
+It is a little website which show you a random picture of Mars and a daily picture choose by Nasa.
+We use for that the Nasa's API : https://api.nasa.gov
 
-VArLrLpyM4SHBkIP99b3fZbXBxjZjKepItuR6Oio
+## Requirements
 
-#### PHOTO de mars
+* python3&nbsp;&nbsp;```sudo apt install python3```
+* pip3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```sudo apt install python3-pip```
+* flask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```pip3 install flask```
+* requests&nbsp;```pip3 install requests```
+* dotenv&nbsp;&nbsp;&nbsp;&nbsp;```pip3 install python-dotenv```
 
-https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=VArLrLpyM4SHBkIP99b3fZbXBxjZjKepItuR6Oio
+## Setup Locally
 
-### Photo of the day
-https://api.nasa.gov/planetary/apod?api_key=VArLrLpyM4SHBkIP99b3fZbXBxjZjKepItuR6Oio
+### Clone the project
+```git clone git@github.com:GregoireMath/ci-cd_project.git```  
 
+### Setup the API Key
+```cd ci-cd_project```  
+```echo 'API_KEY = "SECRET_KEY"' >> .env```
 
+### Launch the app
+```python3 app.py```  
 
-### Il faudra filtrer les réponses JSON sur les images
+## Website access
+
+http://127.0.0.1:5000
