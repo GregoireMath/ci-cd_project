@@ -3,9 +3,10 @@
 ## Requirements
 
 * python3       ```sudo apt install python3```
-* pip3         ```python -m pip3 install --upgrade pip```
-* flask        ```pip3 install flask```
-* requests     ```pip3 install requests```
+* pip3          ```python -m pip3 install --upgrade pip```
+* flask         ```pip3 install flask```
+* requests      ```pip3 install requests```
+* dotenv        ```pip3 install python-dotenv```
 
 ## Setup
 
