@@ -40,9 +40,10 @@ jobs:
           docker tag nasa_api python:3.11.1-buster
 
       # Push the Docker image to a registry
-      - uses: docker/build-push-action@v1
+      - uses: docker/build-push-action@v2
         with:
           username: ${{secrets.DOCKERHUB_USER}}
           password: ${{ secrets.DOCKERHUB_PWD }}
-          repository: gregoiremathian/ci-cd_project
-          tags: ${{ github.ref }}
+          registry: gregoiremathian/ci-cd_project
+          repository: python
+          tags: nasa_api
