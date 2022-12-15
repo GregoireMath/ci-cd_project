@@ -23,7 +23,6 @@ jobs:
 
       # Install dependencies
       - run: |
-          apt-get install -y python3-pip
           pip install Flask
           pip install requests
           pip install python-dotenv
