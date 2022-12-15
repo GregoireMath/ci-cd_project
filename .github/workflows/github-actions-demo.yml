@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PWD }}
           registry: gregoiremathian.io
-          repository: nasa_api
+          repository: ci-cd_project
           dockerfile: dockerfile
       # - uses: docker/login-action@v2
       #   with:
