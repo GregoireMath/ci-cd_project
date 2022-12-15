@@ -34,12 +34,12 @@ After install Docker and dependencies, you must create an image with the docker 
 ### Clone the project
 ```git clone git@github.com:GregoireMath/ci-cd_project.git```  
 
-### In the app's folder
-```sudo docker build . -t <Image's Name>```
-
 ### Setup the API Key
 ```cd ci-cd_project```  
 ```echo 'API_KEY = "SECRET_KEY"' >> .env```
+
+### In the app's folder
+```sudo docker build . -t <Image's Name>```
 
 ### Launch the docker
 ```sudo docker run -d -p 3232:5000 --name <Container's Name> <Image>```
