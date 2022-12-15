@@ -35,6 +35,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PWD }}
 
       - run: |
-          docker build . -t python:nasa_api
-          docker tag python:nasa_api python:nasa_api
-          docker push gregoiremathian/python:nasa_api
+          docker build . -t nasa_api:v1
+          docker image tag nasa_api:v1 gregoiremathian/nasa_api:latest
+          docker push image nasa_api:v1
