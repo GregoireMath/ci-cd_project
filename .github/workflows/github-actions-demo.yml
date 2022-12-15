@@ -37,4 +37,4 @@ jobs:
       - run: |
           docker build . -t python:nasa_api
           docker tag python:nasa_api python:nasa_api
-          docker push gregoiremathian/ci-cd_project:tag_name
+          docker push gregoiremathian/python:nasa_api
