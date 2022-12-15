@@ -37,4 +37,4 @@ jobs:
       - run: |
           docker build . -t nasa_api:v1
           docker image tag nasa_api:v1 gregoiremathian/nasa_api:latest
-          docker push image gregoiremathian.io/nasa_api:v1
+          docker push gregoiremathian.io/nasa_api:v1
