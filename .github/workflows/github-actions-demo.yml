@@ -3,10 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - feature-github_actions
   pull_request:
     branches:
-      - main
+      - feature-github_actions
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
           pip install python-dotenv
 
       # Run the tests
-      # - run: |
+      #- run: |
       #     python -m unittest
 
       # Build the Docker image
