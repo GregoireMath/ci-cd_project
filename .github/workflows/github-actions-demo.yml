@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the code
+      - uses: actions/checkout@v2
+
+      # Set up a Python environment
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      # Install dependencies
+      - run: |
+          apt-get install -y python3-pip
+          pip install Flask
+          pip install requests
+          pip install python-dotenv
+
+      # Run the tests
+      # - run: |
+      #     python -m unittest
+
+      # Build the Docker image
+      - run: |
+          docker build . -t NASA_API
+
+      # Tag the Docker image
+      - run: |
+          docker tag NASA_API NASA_API:${{ github.ref }}
+
+      # Push the Docker image to a registry
+      - uses: docker/build-push-action@v1
+        with:
+          username: ${{secrets.DOCKERHUB_USER}}
+          password: ${{ secrets.DOCKERHUB_PWD }}
+          repository: gregoiremathian/ci-cd_project
+          tags: ${{ github.ref }}
