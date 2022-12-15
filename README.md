@@ -50,6 +50,6 @@ http://localhost:3232
 ## HOW TO test this app
 
 We define 3 test for this app :
-- Menu Page's return is <span style="color:green">```200 OK```</span>
+- Menu Page's return is ```200 OK```
 - Mars Page's return is ```200 OK```
 - Picture of the Day Page's return is ```200 OK```
