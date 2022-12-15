@@ -32,11 +32,11 @@ http://127.0.0.1:5000
 ## Setup with Docker
 After install Docker and dependencies, you must create an image with the docker file:
 
-### Go in the folder 
+### In the app's folder
 sudo docker build . -t <Image's Name>
 
-### To launch in backgrounp :
+### Launch the docker
 sudo docker run -d -p 3232:5000 --name <Container's Name> <Image>
 
-### In an browser :
+### Website access
 http://localhost:3232
