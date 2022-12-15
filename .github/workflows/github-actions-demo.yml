@@ -45,9 +45,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PWD }}
-          registry: gregoiremathian.io
-          repository: ci-cd_project
+          registry: gregoiremathian.io/ci-cd_project
           dockerfile: dockerfile
+
+
+
+
+
       # - uses: docker/login-action@v2
       #   with:
       #     username: ${{ secrets.DOCKERHUB_USER }}
