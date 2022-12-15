@@ -5,7 +5,7 @@
 It is a little website which show you a random picture of Mars and a daily picture choose by Nasa.
 We use for that the Nasa's API : https://api.nasa.gov
 
-## How to run locally
+## HOW TO run locally
 
 ### Requirements
 * python3&nbsp;&nbsp;```sudo apt install python3```
@@ -27,7 +27,7 @@ We use for that the Nasa's API : https://api.nasa.gov
 ### Website access
 http://127.0.0.1:5000
 
-## How to built with Docker
+## HOW TO built with Docker
 
 After install Docker and dependencies, you must create an image with the docker file:
 
@@ -40,4 +40,9 @@ After install Docker and dependencies, you must create an image with the docker 
 ### Website access
 http://localhost:3232
 
-## How to test
+## HOW TO test this app
+
+We define 3 test for this app :
+- Menu Page's return is ```200 OK```
+- Mars Page's return is ```200 OK```
+- Picture of the Day Page's return is ```200 OK```
