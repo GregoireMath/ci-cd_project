@@ -13,15 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the code
       - uses: actions/checkout@v2
 
-      # Set up a Python environment
       - uses: actions/setup-python@v2
         with:
           python-version: 3.8
 
-      # Install dependencies
       - run: |
           pip install Flask
           pip install requests
@@ -31,36 +28,13 @@ jobs:
       #- run: |
       #     python -m unittest
 
-      # Build the Docker image
-      - run: |
-          docker build . -t nasa_api
-
-      # Tag the Docker image
-      - run: |
-          docker tag nasa_api python:3.11.1-buster
-
-      # Push the Docker image to a registry
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v3
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PWD }}
-          registry: gregoiremathian.io/ci-cd_project
-          dockerfile: dockerfile
 
-
-
-
-
-      # - uses: docker/login-action@v2
-      #   with:
-      #     username: ${{ secrets.DOCKERHUB_USER }}
-      #     password: ${{ secrets.DOCKERHUB_PWD }}
-
-      # - name: Build and push
-      #   uses: docker/build-push-action@v3
-      #   with:
-      #     context: .
-      #     push: ${{ github.event_name != 'pull_request' }}
-      #     tags: python:nasa_api
-      #     labels: A little label
+      - run: |
+          docker build dockerfile -t python:nasa_api .
+          docker tag python:nasa_api python:main
+          docker push gregoiremathian/ci-cd_project:main
