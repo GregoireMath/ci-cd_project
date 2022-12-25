@@ -16,7 +16,7 @@ jobs:
       - name: Install the dependances
         with:
           python-version: 3.8
-      - run: |
+        run: |
           pip install Flask
           pip install requests
           pip install python-dotenv
