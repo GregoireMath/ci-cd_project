@@ -70,7 +70,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Installation dependances
-      run: python -m pip install -r requirements.txt
+      run: |
+          pip install Flask
+          pip install requests
+          pip install python-dotenv
       
     # - name: Tests
     #   run: pytest test_app.py
