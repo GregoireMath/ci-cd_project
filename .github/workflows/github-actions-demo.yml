@@ -18,7 +18,8 @@ jobs:
           pip install requests
           pip install python-dotenv
           pip install pytest
-          echo ${{ secrets.API_KEY }} >> .env
+          echo 'API_KEY = ${{ secrets.API_KEY }}' >> .env
+          cat .env
     - name: Run_Tests
       run: pytest test_app.py
 
