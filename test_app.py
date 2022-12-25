@@ -10,7 +10,7 @@ def client():
 
 def test_index(client):
     response = client.get('/')
-    assert response.status_code == 300
+    assert response.status_code == 200
 
 def test_mars(client):
     response = client.get('/mars')
