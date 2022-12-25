@@ -19,7 +19,7 @@ jobs:
           pip install python-dotenv
           pip install pytest     
     - name: Run_Tests
-      run: pytest app_test.py
+      run: pytest test_app.py
 
   build_and_login:  
     runs-on: ubuntu-latest
