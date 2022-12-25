@@ -74,10 +74,7 @@ jobs:
           pip install Flask
           pip install requests
           pip install python-dotenv
-          pip install unittest2
-￼
-
-      
+          pip install unittest2     
     # - name: Tests
     #   run: pytest test_app.py
 
