@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Installation
       - uses: actions/setup-python@v2
       - name: Install the dependances
         with:
@@ -52,7 +51,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           
       - name: Build the Docker image
-        run: |
+      -  run: |
             docker build . --tag mywebapp:latest
             docker tag mywebapp:latest ${{ secrets.DOCKER_USERNAME }}/mywebapp:latest
             docker push ${{ secrets.DOCKER_USERNAME }}/mywebapp:latest
