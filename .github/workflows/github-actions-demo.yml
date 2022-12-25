@@ -91,6 +91,6 @@ jobs:
           
       - name: Build the Docker image
         run: |
-            docker build . --tag mywebapp:latest
-            docker tag mywebapp:latest ${{ secrets.DOCKERHUB_USER }}/mywebapp:latest
-            docker push ${{ secrets.DOCKERHUB_USER }}/mywebapp:latest
+            docker build . --tag nasa_api:latest
+            docker tag nasa_api:latest ${{ secrets.DOCKERHUB_USER }}/nasa_api:latest
+            docker push ${{ secrets.DOCKERHUB_USER }}/nasa_api:latest
