@@ -17,9 +17,9 @@ jobs:
           pip install Flask
           pip install requests
           pip install python-dotenv
-          pip install unittest2     
+          pip install pytest     
     - name: Run_Tests
-      run: python app_test.py
+      run: pytest app_test.py
 
   build_and_login:  
     runs-on: ubuntu-latest
