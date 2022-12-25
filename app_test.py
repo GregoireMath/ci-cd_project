@@ -6,10 +6,9 @@ def test_http_request_menu():
     response = requests.get(url)
     if response.status_code == 200:
         verification="OK"
+        return verification
     else:
-        verification="NOK"
-
-    return verification 
+        raise Exception("Page error on /")
 
 
 def test_http_request_potd():
@@ -25,11 +24,11 @@ def test_http_request_potd():
 def test_http_request_mars():
     url = "http://localhost:3232/mars"
     response = requests.get(url)
-    if response.status_code == 200:
-         verification="OK"
+     if response.status_code == 200:
+        verification="OK"
+        return verification
     else:
-        verification="NOK"
-    return verification
+        raise Exception("Page error on /mars")
 
 
 test_http_request_mars()
