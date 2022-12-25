@@ -6,7 +6,7 @@ import random
 
 app = Flask(__name__)
 load_dotenv()
-key = os.environ.get('API_KEY')
+key = str(os.environ.get('API_KEY'))
 
 @app.route('/')
 def index():
