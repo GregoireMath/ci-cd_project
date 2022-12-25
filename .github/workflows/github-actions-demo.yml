@@ -2,9 +2,9 @@ name: CICD
 
 on:
   push:
-    branches: ["feature-github_actions"]
+    branches: ["main"]
   pull_request:
-    branches: ["feature-github_actions"]
+    branches: ["main"]
 
 jobs:
 
