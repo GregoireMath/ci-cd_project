@@ -6,7 +6,7 @@ import random
 
 app = Flask(__name__)
 load_dotenv()
-key = str(os.environ.get('API_KEY'))
+key = os.environ.get('API_KEY')
 
 @app.route('/')
 def index():
@@ -14,7 +14,7 @@ def index():
 
 @app.route('/mars',methods=['GET'])
 def mars():
-    url='https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key='+key
+    url='https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key='+str(key)
     response = requests.get(url).json()
 
     links = []
@@ -28,7 +28,7 @@ def mars():
 
 @app.route('/potd',methods=['GET'])
 def potd():
-    url='https://api.nasa.gov/planetary/apod?api_key='+key
+    url='https://api.nasa.gov/planetary/apod?api_key='+str(key)
     response = requests.get(url).json()
 
     picture = response["hdurl"]
