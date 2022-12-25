@@ -1,0 +1,41 @@
+name: CICD
+
+on:
+  push:
+    branches: ["feature-github_actions"]
+  pull_request:
+    branches: ["feature-github_actions"]
+
+jobs:
+
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Installation dependances
+      run: |
+          pip install Flask
+          pip install requests
+          pip install python-dotenv
+          pip install pytest
+          echo 'API_KEY = ${{ secrets.API_KEY }}' >> .env
+          cat .env
+    - name: Run_Tests
+      run: pytest test_app.py
+
+  build_and_login:  
+    runs-on: ubuntu-latest
+    needs: build_and_test 
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login repo 
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_PWD }}
+          
+      - name: Build the Docker image
+        run: |
+            docker build . --tag nasa_api:latest
+            docker tag nasa_api:latest ${{ secrets.DOCKERHUB_USER }}/nasa_api:latest
+            docker push ${{ secrets.DOCKERHUB_USER }}/nasa_api:latest
