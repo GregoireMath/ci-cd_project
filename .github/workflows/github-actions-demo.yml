@@ -17,7 +17,8 @@ jobs:
           pip install Flask
           pip install requests
           pip install python-dotenv
-          pip install pytest     
+          pip install pytest
+          echo ${{ secrets.API_KEY }} >> .env
     - name: Run_Tests
       run: pytest test_app.py
 
